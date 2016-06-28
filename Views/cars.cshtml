@@ -1,0 +1,8 @@
+<h1>To Do List</h1>
+<ul>
+  @foreach (var car in Model)
+  {
+    <li><a href='/cars/@car.GetId()'>@car.GetMakeModel()</a></li>
+  }
+</ul>
+<a href='/cars/new'>Add new car</a>

@@ -11,6 +11,9 @@ namespace CarDeal.Objects
     private int _miles;
     private string _message;
     private int _year;
+    private int _id;
+
+
     private static List<Car> _carList = new List<Car> {};
 
 
@@ -26,6 +29,9 @@ namespace CarDeal.Objects
       _miles = miles;
       _message = message;
       _year = year;
+
+      _carList.Add(this);
+      _id = _carList.Count;
 
     }
 
@@ -108,10 +114,13 @@ namespace CarDeal.Objects
     {
       _carList.Clear();
     }
-
-
-
-
-
+    public int GetId()
+       {
+         return _id;
+       }
+    public static Car Find (int id)
+    {
+      return _carList[id - 1];
+    }
   }
 }
